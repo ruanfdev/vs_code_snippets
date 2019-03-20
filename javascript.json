@@ -1,0 +1,310 @@
+{
+	// Place your snippets for javascript here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"Document ready": {
+		"prefix": "nwk-doc-ready",
+		"body": [
+			"\\$(function() {",
+			"\t$0",
+			"});"
+		], 
+		"description": "jQuery document.ready"
+	},
+	"Global loading spinner": {
+		"prefix": "nwk-loading-global",
+		"body": [
+			"window.parent.parent.\\$('.loadingFrame').show();"
+		],
+		"description": "Shows the global loading spinner"
+	},
+	"Colorbox": {
+		"prefix": "nwk-colorbox",
+		"body": [
+			"\\$.colorbox({",
+			"\twidth: '98%',",
+			"\theight: '98%',",
+			"\tiframe: true,",
+			"\tfastIframe: false,",
+			"\tescKey: false,",
+			"\toverlayClose: false,",
+			"\tfixed: true,",
+			"\thref: '$url'",
+			"});"
+		],
+		"description": "Create Colorbox"
+	},
+	"Show Noty wrapper": {
+		"prefix": "nwk-noty-wrapper",
+		"body": [
+			"function $function_name($message, $type, $timeout) {",
+			"\tvar noty = [];",
+			"\tnoty['message'] = $message;",
+			"\tnoty['position'] = 'top';",
+			"\tnoty['type'] = $type;",
+			"\tnoty['modal'] = true;",
+			"\tnoty['timeout'] = $timeout;",
+			"\tshow_noty(noty);",
+			"}"
+		],
+		"description": "A wrapper for the show_noty-function"
+	},
+	"Attach tip": {
+		"prefix": "nwk-tip",
+		"body": [
+			"var form = \\$('#$form_name').data('Zebra_Form');",
+			"form.attach_tip($('#$field_name'), '<?php echo \\$translation->getValue('$translation');?>');"
+		],
+		"description": "Generate attach tip for control"
+	},
+	"Set Select2": {
+		"prefix": "nwk-select2",
+		"body": [
+			"\\$('select').select2({theme: 'bootstrap'});"
+		],
+		"description": "Set all selects to select2"
+	},
+	"ZebraForm callback": {
+		"prefix": "nwk-callback",
+		"body": [
+			"function $callback_name($display_indicator, $control_name) {",
+			"\tif ($display_indicator) {",
+			"\t\t\\$('.' + $control_name).show();",
+			"\t} else {",
+			"\t\t\\$('.' + $control_name).hide();",
+			"",
+			"\t\t\\$('.' + $control_name).children().find('input, select').each(function(e) {",
+			"\t\t\tswitch($(this).get(0).type) {",
+			"\t\t\t\tcase 'select-one':",
+			"\t\t\t\t\t\\$(this).select2('val', '');",
+			"\t\t\t\t\tbreak;",
+			"\t\t\t\tcase 'radio':",
+			"\t\t\t\tcase 'checkbox':",
+			"\t\t\t\t\t\\$(this).attr('checked', false);",
+			"\t\t\t\t\tbreak;",
+			"\t\t\t\tcase 'text':",
+			"\t\t\t\t\t\\$(this).val('');",
+			"\t\t\t\t\tbreak;",
+			"\t\t\t}",
+			"\t\t});",
+			"\t}",
+			"}",
+		],
+		"description": "Calback for ZebraForm dependency"
+	},
+	"Submit function": {
+		"prefix": "nwk-submit",
+		"body": [
+			"function $function_name() {",
+			"\tvar form = \\$('#$form_name').data('Zebra_Form');",
+			"",
+			"\tif (form.validate()) {",
+			"\t\t\\$('#$control_name').prop('disabled', true);",
+			"\t\tform.submit();",
+			"\t}",
+			"}",
+		],
+		"description": "Submit function"
+	},
+	"Datagrid iframe": {
+		"prefix": "nwk-datagrid-iframe",
+		"body": [
+			"\\$('#$id').show();",
+			"\\$('#$id').prop('src', '$url');",
+			"\\$('#$id').css({'height': window.innerHeight - $height});",
+		],
+		"description": "Show and populate datagrid in iframe"
+	},
+	"Datagrid": {
+		"prefix": "nwk-datagrid",
+		"body": [
+			"\\$('#$datagrid_id').datagrid({",
+			"\ttitle: '<?php echo \\$translation->getValue('$title_translation');?>',",
+			"\tsingleSelect: true,",
+			"\tfitColumns: true,",
+			"\tpagination: true,",
+			"\trownumbers: true,",
+			"\tpageSize: 10,",
+			"\tremoteSort: false,",
+			"\tmultiSort: true,",
+			"\tpageList: [10, 20, 30, 40, 50],",
+			"\ttoolbar: '#$toolbar_id',",
+			"\twidth: '100%',",
+			"\theight: window.innerHeight - 35,",
+			"\turl: '$url',",
+			"\tcolumns:[[",
+			"\t\t{field: '$field_id', halign: 'left', align: 'left', title: '<?php echo \\$translation->getValue('$field_translation');?>', width: 100, sortable: true},",
+			"\t\t{field: '$button_field_id', halign: 'left', align: 'center', title: '<?php echo \\$translation->getValue('$button_translation');?>'},",
+			"\t]],",
+			"\tonLoadError: function() {",
+			"\t\tvar notyE = [];",
+			"",
+			"\t\tnotyE['message'] = '<?php echo \\$translation->getValue('errOnverwagteFout');?>';",
+			"\t\tnotyE['position'] = 'top';",
+			"\t\tnotyE['type'] = 'E';",
+			"\t\tnotyE['modal'] = true;",
+			"\t\tnotyE['timeout'] = false;",
+			"",
+			"\t\tshow_noty(notyE);",
+			"\t},",
+			"\tonLoadSuccess : function(data) {",
+			"\t\tif (data.rows.length > 0 && typeof data.rows[0].ERROR != 'undefined' && data.rows[0].ERROR != '' && data.rows[0].ERROR != null) {",
+			"\t\t\tvar notyE = [];",
+			"",
+			"\t\t\tnotyE['message'] = data.rows[0].ERROR;",
+			"\t\t\tnotyE['position'] = 'top';",
+			"\t\t\tnotyE['type'] = 'E';",
+			"\t\t\tnotyE['modal'] = true;",
+			"\t\t\tnotyE['timeout'] = false;",
+			"",
+			"\t\t\tshow_noty(notyE);",
+			"\t\t}",
+			"\t}",
+			"});",
+			"",
+			"\\$('#$datagrid_id').datagrid('enableFilter');"
+		],
+		"description": "Create Datagrid"
+	},
+	"AJAX call - R": {
+		"prefix": "nwk-ajax-r",
+		"body": [
+			"\\$.ajax({",
+			"\turl: '$url',",
+			"\tdataType: 'json',",
+			"\ttype: 'post',",
+			"\tdata: {",
+			"\t\t$var_naam: $var_value,",
+			"\t}",
+			"}).done(function(data) {",
+			"\tif (data._S != 'J') {",
+			"\tvar noty = [];",
+			"\tnoty['message'] = '<?php echo $translation->getValue('translation');?>';",
+			"\tnoty['position'] = 'top';",
+			"\tnoty['type'] = 'E';",
+			"\tnoty['modal'] = true;",
+			"\tnoty['timeout'] = false;",
+			"\tshow_noty(noty);",
+			"\t} else {",
+			"\t",
+			"\t}",
+			"});"
+		],
+		"description": "AJAX call"
+	},
+	"AJAX call - Q": {
+		"prefix": "nwk-ajax-q",
+		"body": [
+			"\\$.ajax({",
+			"\turl: '$url',",
+			"\tdataType: 'json',",
+			"\tdata: {",
+			"\t\t$var_naam: $var_value,",
+			"\t}",
+			"}).done(function(data) {",
+			"\tvar noty = [];",
+			"\tnoty['modal'] = true;",
+			"\tnoty['layout'] = 'top';",
+			"",
+			"\tif (data.ERROR == '') {",
+			"\t\tnoty['type'] = 'success';",
+			"\t\tnoty['timeout'] = 1500;",
+			"\t\tnoty['message'] = '<?php echo \\$translation->getValue('$translation');?>';",
+			"\t} else {",
+			"\t\tnoty['type'] = 'error';",
+			"\t\tnoty['timeout'] = false;",
+			"\t\tnoty['message'] = data.ERROR;",
+			"\t}",
+			"",
+			"\tshow_noty(noty);",
+			"});"
+		],
+		"description": "AJAX call"
+	},
+	"Noty Success": {
+		"prefix": "nwk-noty-success",
+		"body": [
+			"var noty = [];",
+			"noty['message'] = '<?php echo \\$translation->getValue('${1:translation}');?>';",
+			"noty['position'] = 'top';",
+			"noty['type'] = 'S';",
+			"noty['modal'] = true;",
+			"noty['timeout'] = 1500;",
+			"show_noty(noty);",
+		],
+		"description": "Show Success Noty"
+	},
+	"Noty Error": {
+		"prefix": "nwk-noty-error",
+		"body": [
+			"var noty = [];",
+			"noty['message'] = '<?php echo \\$translation->getValue('${1:translation}');?>';",
+			"noty['position'] = 'top';",
+			"noty['type'] = 'E';",
+			"noty['modal'] = true;",
+			"noty['timeout'] = false;",
+			"show_noty(noty);",
+		],
+		"description": "Show Error Noty"
+	},
+	"Noty Verwerk": {
+		"prefix": "nwk-noty-verwerk",
+		"body": [
+			"var noty = [];",
+			"noty['message'] = '<?php echo \\$translation->getValue('msgVerwerkingWA');?>';",
+			"noty['type'] = 'V';",
+			"noty['modal'] = true;",
+			"noty['timeout'] = false;",
+			"show_noty(noty);",
+		],
+		"description": "Show Verwerking Noty"
+	},
+	"Noty Confirm": {
+		"prefix": "nwk-noty-confirm",
+		"body": [
+			"var noty = [];",
+			"noty['message'] = '<?php echo \\$translation->getValue('$translation');?>';",
+			"noty['position'] = 'top';",
+			"noty['type'] = 'C';",
+			"noty['modal'] = true;",
+			"noty['button'] = {};",
+			"noty['button'][0] = {",
+			"\t'addClass': 'btn btn-success',",
+			"\t'text': '<?php echo \\$translation->getValue('$success_button_translation');?>',",
+			"\t'onClick': function() {",
+			"\t\t\\$.noty.closeAll();",
+			"\t}",
+			"}",
+			"noty['button'][1] = {",
+			"\t'addClass': 'btn btn-danger',",
+			"\t'text': '<?php echo \\$translation->getValue('$danger_button_translation');?>',",
+			"\t'onClick': function() {",
+			"\t\t\\$.noty.closeAll();",
+			"\t}",
+			"}",
+			"show_noty(noty);",
+		],
+		"description": "Show Confirm Noty"
+	},
+	"Noty Event": {
+		"prefix": "nwk-noty-event",
+		"body": [
+			"noty['event'] = {",
+			"\t${1|onShow,afterShow,onClose,afterClose,onCloseClick|}: function() {",
+			"\t\t$2",
+			"\t}",
+			"}$0"
+		],
+		"description": "Events for Noty"
+	},
+}
