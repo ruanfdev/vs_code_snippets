@@ -1,0 +1,372 @@
+{
+	// Place your snippets for php here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"ZebraForm radio buttons": {
+		"prefix": "nwk-radio",
+		"body": [
+			"\\$form->add('label', '$label_name', '$control_name', \\$translation->getValue('$translation'));",
+			"\\$obj = \\$form->add('radios', '$control_name', $options);",
+			"\\$obj->set_attributes(array(",
+			"\t'class' => 'input-field control'",
+			"));"
+		],
+		"description": "Create ZebraForm radio buttons"
+	},
+	"ZebraForm checkbox": {
+		"prefix": "nwk-checkbox",
+		"body": [
+			"\\$obj = \\$form->add('checkbox', '$control_name', '$value');"
+		],
+		"description": "Create ZebraForm checkbox control"
+	},
+	"ZebraForm checkbox2": {
+		"prefix": "nwk-checkbox2",
+		"body": [
+			"\\$obj = \\$form->add('checkbox2', '${1:control_name}', '${2:value}', \\$translation->getValue('${3:translation}'));"
+		],
+		"description": "Create ZebraForm checkbox2 control"
+	},
+	"ZebraForm date": {
+		"prefix": "nwk-date",
+		"body": [
+			"\\$form->add('label', '$label_name', '$control_name', \\$translation->getValue('$translation'));",
+			"\\$obj = \\$form->add('date', '$control_name', date('Ymd'));",
+			"\\$obj->format('Ymd');",
+			"\\$obj->set_rule(array(",
+			"\t'date' =>  array('error', \\$translation->getValue('errDate')),",
+			"));",
+		],
+		"description": "Create ZebraForm date control"
+	},
+	"ZebraForm text": {
+		"prefix": "nwk-text",
+		"body": [
+			"\\$form->add('label', '$label_name', '$control_name', \\$translation->getValue('$translation'));",
+			"\\$obj = \\$form->add('text', '$control_name');",
+			"\\$obj->set_attributes(array(",
+			"\t'class' => 'input-field control form-control',",
+			"));"
+		],
+		"description": "Create ZebraForm text control"
+	},
+	"ZebraForm select": {
+	 	"prefix": "nwk-select",
+	 	"body": [
+	 		"\\$form->add('label', '$label', '$control_name', \\$translation->getValue('$translation'));",
+			"\\$obj = \\$form->add('select', '$control_name');",
+			"\\$obj->add_options($options);",
+			"\\$obj->set_attributes(array(",
+			"\t'class' => 'input-field control form-control',",
+			"));"
+	 	],
+	 	"description": "Create ZebraForm select control"
+	},
+	"ZebraForm button": {
+		"prefix": "nwk-button",
+		"body": [
+			"\\$obj = \\$form->add('button', '${1:control_name}', '<span class=\"fa fa-${2:icon}\"></span> '.\\$translation->getValue('${3:translation}'));",
+			"\\$obj->set_attributes(array(",
+				"\t'class' => 'btn btn-${4|success,warning,info,danger|}',",
+				"\t'onclick' => '$function_name',",
+			"));"
+		],
+		"description": "Create ZebraForm button control"
+	},
+	"ZebraForm spam filter": {
+		"prefix": "nwk-spam-filter",
+		"body": [
+			"\\$obj->disable_spam_filter();"
+		],
+		"description": "Disable ZebraForm's spam filter"
+	},
+	"ZebraForm case": {
+		"prefix": "nwk-case",
+		"body": [
+			"\\$obj->change_case('upper');"
+		],
+		"description": "Change case of ZebraForm control"
+	},
+	"ZebraForm set attributes": {
+		"prefix": "nwk-attributes",
+		"body": [
+			"\\$obj->set_attributes(array(",
+			"\t$0",
+			"));"
+		],
+		"description": "ZebraForm set attributes"
+	},
+	"ZebraForm autofocus attribute": {
+		"prefix": "nwk-autofocus",
+		"body": [
+			"'autofocus' => 'autofocus',"
+		],
+		"description": "ZebraForm autofocus attribute"
+	},
+	"ZebraForm reaonly attribute": {
+		"prefix": "nwk-readonly",
+		"body": [
+			"'readonly' => 'readonly',"
+		],
+		"description": "ZebraForm readonly attribute"
+	},
+	"ZebraForm form control attribute": {
+		"prefix": "nwk-form-control",
+		"body": [
+			"'class' => 'input-field control form-control',",
+		],
+		"description": "ZebraForm form control attribute"
+	},
+	"ZebraForm onChange attribute": {
+		"prefix": "nwk-onchange",
+		"body": [
+			"'onchange' => '$function_name',"
+		],
+		"description": "ZebraFrom onChange attribute"
+	},
+	"ZebraForm onClick attribute": {
+		"prefix": "nwk-onclick",
+		"body": [
+			"'onclick' => '$function_name',"
+		],
+		"description": "ZebraFrom onClick attribute"
+	},
+	"ZebraForm checked attribute": {
+		"prefix": "nwk-checked",
+		"body": [
+			"'checked' => '${1|true,false|}',"
+		],
+		"description": "ZebraFrom checked attribute"
+	},
+	"ZebraForm set rule": {
+		"prefix": "nwk-rule",
+		"body": [
+			"\\$obj->set_rule(array(",
+			"\t$0",
+			"));"
+		],
+		"description": "ZebraForm setRule attribute"
+	},
+	"ZebraForm number rule": {
+		"prefix": "nwk-number",
+		"body": [
+			"'number' => array('', 'error', \\$translation->getValue('errNumeries')),"
+		],
+		"description": "ZebraForm number rule"
+	},
+	"ZebraForm required rule": {
+		"prefix": "nwk-required",
+		"body": [
+			"'required' => array('error', \\$translation->getValue('errRequired')),"
+		],
+		"description": "ZebraForm required rule"
+	},
+	"ZebraForm length rule": {
+		"prefix": "nwk-length",
+		"body": [
+			"'length' => array($start_length, $end_lenght, 'error', \\$translation->getValue('errLength')),",
+		],
+		"description": "ZebraFrom length rule"
+	},
+	"ZebraForm dependency rule": {
+		"prefix": "nwk-dependency",
+		"body": [
+			"'dependencies' => array(array('$control_name' => $trigger_val), '$calback_name, $calback_param'),"
+		],
+		"description": "ZebraFrom dependency rule"
+	},
+	"Template": {
+		"prefix": "nwk-template",
+		"body": [
+			"require_once(\\$_SERVER['DOCUMENT_ROOT'] .'/nwk/Language/Language.class.php');",
+			"\\$translation = Language::start();",
+			"echo (isset(\\$zf_error) ? \\$zf_error : (isset(\\$error) ? \\$error : ''));",
+			"?>",
+			"<div class=\"container-fluid\">",
+			"\t<div class=\"row\">",
+			"\t\t<i style=\"float: right; color: #AFAFAF\" class=\"fa fa-info-circle\" title=\"",
+			"PHP:",
+			"$php_programs",
+			"",
+			"NATURAL:",
+			"$natural_programs",
+			"",
+			"WSDL:",
+			"$wsdl\"",
+			"\t\t></i>",
+			"\t\t<fieldset>",
+			"\t\t\t<legend><?php echo \\$translation->getValue('$translation');?></legend>",
+			"\t\t\t<div class=\"row\">",
+			"\t\t\t\t<div class=\"col-sm-2 col-md-2 col-lg-2\">",
+			"\t\t\t\t\t<?php echo $label_name;?>",
+			"\t\t\t\t</div>",
+			"\t\t\t\t<div class=\"col-sm-3 col-md-3 col-lg-3\">",
+			"\t\t\t\t\t<?php echo $control_name;?>",
+			"\t\t\t\t</div>",
+			"\t\t\t</div>",
+			"\t\t</fieldset>",
+			"\t</div>",
+			"</div>"
+		],
+		"description": "Create template for ZebraForm"
+	},
+	"Class": {
+		"prefix": "nwk-class",
+		"body": [
+			"class $class_name {",
+			"\tprivate \\$fout, \\$data, \\$translation;",
+			"",
+			"\tfunction __construct() {",
+			"\t\trequire_once(\\$_SERVER['DOCUMENT_ROOT'] .'/nwk/Language/Language.class.php');",
+			"\t\t\\$this->translation = Language::start();",
+			"",
+			"\t\t\\$wsdl = '$wsdl';",
+			"\t\t\\$wsdl_pad = 'http://'.\\$_SERVER['HTTP_HOST'].':10010/wsstack/services/'.\\$wsdl.'.wsdl?';",
+			"",
+			"\t\trequire_once(\\$_SERVER['DOCUMENT_ROOT'].'/nwk/config.php');",
+			"\t\t\\$this->client = new client(\\$wsdl_pad, \\$wsdl);",
+			"",
+			"\t\t\\$this->data = array();",
+			"\t\t\\$this->data['_SOEK_VELD'] = '';",
+			"\t\t\\$this->data['_SOEK_WAARDE'] = '';",
+			"\t\t\\$this->data['_FOUT'] = '';",
+			"\t\t\\$this->data['_VELD'] = '';",
+			"\t\t\\$this->data['_S'] = '';",
+			"",
+			"\t\t\\$this->resetFout();",
+			"\t}",
+			"",
+			"\t/**",
+			"\t * Herstel fout-veranderlike na null",
+			"\t */",
+			"\tprivate function resetFout() {",
+			"\t\t\\$this->fout = null;",
+			"\t}",
+			"",
+			"\t/**",
+			"\t * Kry die fout-veranderlike",
+			"\t * ",
+			"\t * @return string",
+			"\t */",
+			"\tpublic function kryFout() {",
+			"\t\treturn \\$this->fout;",
+			"\t}",
+			"",
+			"\t/**",
+			"\t * Roep 'n Natural program",
+			"\t * ",
+			"\t * @param  string    \\$program        die program om te roep",
+			"\t * @return stdClass",
+			"\t * ",
+			"\t */",
+			"\tpublic function roepNat(\\$program) {",
+			"\t\t\\$this->resetFout();",
+			"",
+			"\t\ttry {",
+			"\t\t\t\\$resultaat = \\$this->client->callFunction(\\$program, \\$this->data);",
+			"",
+			"\t\t\tif (!empty(\\$resultaat->ErrorValue)) {",
+			"\t\t\t\tthrow new NaturalException('NOTY', \\$resultaat->ErrorValue);",
+			"\t\t\t} else if (!empty(\\$resultaat->faultstring)) {",
+			"\t\t\t\tthrow new NaturalException('NOTY', \\$resultaat->faultstring);",
+			"\t\t\t} else if (\\$resultaat->_S == 'N' || !empty(\\$resultaat->_FOUT)) {",
+			"\t\t\t\t\\$fout = !empty(\\$resultaat->_FOUT) ? \\$resultaat->_FOUT : 'errOnverwagteFout';",
+			"\t\t\t\t\\$veld = !empty(\\$resultaat->_VELD) ? \\$resultaat->_VELD : 'NOTY';",
+			"\t\t\t\tthrow new NaturalException(\\$veld, \\$fout);",
+			"\t\t\t} ",
+			"\t\t} catch (NaturalException \\$e) {",
+			"\t\t\t\\$this->fout['BOODSKAP'] = \\$e->getVeld().': '.\\$this->translation->getValue(\\$e->getFout()).' ('.\\$e->getFile().' - '.\\$e->getLine().')';",
+			"\t\t\t\\$this->fout['SLEUTEL'] = \\$e->getFout();",
+			"\t\t} finally {",
+			"\t\t\treturn \\$resultaat;",
+			"\t\t}",
+			"\t}",
+			"}",
+		],
+		"description": "Create class"
+	},
+	"ZebraForm attach tip": {
+		"prefix": "nwk-attach-tip",
+		"body": [
+			"\\$form->fout('${1:field}', \\$translation->getValue('${2:translation}'), '${3:template}');"
+		],
+		"description": "ZebraForm attach tip on field"
+	},
+	"ZebraForm next page": {
+		"prefix": "nwk-next-page",
+		"body": [
+			"\\$parms = array();",
+			"\\$form->next_page('${1:url_of_page}',\\$parms);"
+		],
+		"description": "ZebraForm redirect to new page with parameters passed with GET"
+	},
+	"Show Noty wrapper": {
+		"prefix": "nwk-noty-wrapper",
+		"body": [
+			"function $function_name(\\$$message, \\$$type, \\$$timeout, \\$$exit = false) {",
+			"\tglobal \\$form;",
+			"",
+			"\t\\$noty = [];",
+			"\t\\$noty['message'] = \\$$message;",
+			"\t\\$noty['position'] = 'top';",
+			"\t\\$noty['timeout'] = \\$$timeout;",
+			"\t\\$noty['modal'] = true;",
+			"\t\\$noty['type'] = \\$$type;",
+			"\t\\$form->show_noty(\\$noty);",
+			"",
+			"\tif (\\$$exit) {",
+			"\t\texit;",
+			"\t}",
+			"}"
+		],
+		"description": "A wrapper for the show_noty-function"
+	},
+	"Natural call": {
+		"prefix": "nwk-natural-call",
+		"body": [
+			"try {",
+			"\t\\$wsdl = \"WSDL\";",
+			"\t\\$program = \"NAT\";",
+			"\t\\$wsdl_pad = 'http://'.\\$_SERVER['HTTP_HOST'].':10010/wsstack/services/'.\\$wsdl.'.wsdl?';",
+			"",
+			"\trequire_once(\\$_SERVER['DOCUMENT_ROOT'].'/nwk/config.php');",
+			"\t\\$this->client = new client(\\$wsdl_pad, \\$wsdl);",
+			"",
+			"\t\\$data = [];",
+			"\t\\$data['_FOUT'] = '';",
+			"\t\\$data['_VELD'] = '';",
+			"\t\\$data['_EVENT'] = '';",
+			"\t\\$data['_S'] = '';",
+			"",
+			"\t\\$resultaat = \\$client->callFunction(\\$program, \\$data);",
+			"\t\\$veld = (!empty(\\$resultaat->_VELD)) ? \\$resultaat->_VELD : '_NOTY';",
+			"",
+			"\t//\\$DEBUG->debug(\\$resultaat,true);",
+			"",
+			"\tif (!empty(\\$resultaat->ErrorValue)) {",
+			"\t\tthrow new NaturalException(\\$veld, \\$resultaat->ErrorValue);",
+			"\t} else if (!empty(\\$resultaat->faultstring)) {",
+			"\t\tthrow new NaturalException(\\$veld, \\$resultaat->faultstring);",
+			"\t} else if ((!empty(\\$resultaat->_S) && \\$resultaat->_S == 'N') || !empty(\\$resultaat->_FOUT)) {",
+			"\t\t\\$fout = !empty(\\$resultaat->_FOUT) ? \\$translation->getValue(\\$resultaat->_FOUT) : \\$translation->getValue('errOnverwagteFout');",
+			"\t\tthrow new NaturalException(\\$veld, \\$fout);",
+			"\t} else {",
+			"",
+			"\t}",
+			"} catch (NaturalException \\$e) {",
+			"\t\\$error = \\$e->getVeld().': '.\\$e->getFout().' ('.\\$e->getFile().' - '. \\$e->getLine().')';",
+			"}"
+		],
+		"description": "Natural call with error handling"
+	}
+}
