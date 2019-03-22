@@ -38,6 +38,7 @@
 			"\tfastIframe: false,",
 			"\tescKey: false,",
 			"\toverlayClose: false,",
+			"\tcloseButton: true,",
 			"\tfixed: true,",
 			"\thref: '$url'",
 			"});"
