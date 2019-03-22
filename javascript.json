@@ -319,6 +319,6 @@
 			"\t});"
 			"}"
 		],
-		"description": "onChange Date Callback for ZebraForm"
+		"description": "Paired with PHP snippet. onChange Date Callback for ZebraForm"
 	},
 }
