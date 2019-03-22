@@ -368,5 +368,14 @@
 			"}"
 		],
 		"description": "Natural call with error handling"
-	}
+	},
+	"ZebraForm Date Callback": {
+		"prefix": "nwk-date-onchange",
+		"body": [
+			"\t\\$form->clientside_validation(array("
+			"\t\t'on_ready' => 'callback',"
+			"\t));"
+		],
+		"description": "Paired with JS snippet. onChange Date Callback for ZebraForm"
+	},
 }
