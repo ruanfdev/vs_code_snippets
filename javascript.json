@@ -307,4 +307,18 @@
 		],
 		"description": "Events for Noty"
 	},
+	"ZebraForm Date Callback": {
+		"prefix": "nwk-date-onchange",
+		"body": [
+			"var callback = function() {"
+			"\tvar datepicker = $('#${1:fieldID}').data('Zebra_DatePicker');"
+			"\tdatepicker.update({"
+			"\t\tonSelect: function() {"
+			"\t\t\tonChangeFunction();"
+			"\t\t}"
+			"\t});"
+			"}"
+		],
+		"description": "onChange Date Callback for ZebraForm"
+	},
 }
