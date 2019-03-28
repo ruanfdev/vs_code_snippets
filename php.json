@@ -372,10 +372,20 @@
 	"ZebraForm Date Callback": {
 		"prefix": "nwk-date-onchange",
 		"body": [
-			"\\$form->clientside_validation(array("
-			"\t'on_ready' => 'callback',"
-			"));"
+			"\t\\$form->clientside_validation(array("
+			"\t\t'on_ready' => 'callback',"
+			"\t));"
 		],
 		"description": "Paired with JS snippet. onChange Date Callback for ZebraForm"
+	},
+	"Debug PrintR": {
+		"prefix": "nwk-printr-debug",
+		"body": [
+			"echo '<pre>';"
+			"print_r(${1:\\$result});"
+			"echo '</pre>';"
+			"die;"
+		],
+		"description": "PrintR debug for WSDL Call"
 	},
 }
