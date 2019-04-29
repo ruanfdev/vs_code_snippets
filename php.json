@@ -379,14 +379,14 @@
 		"description": "Paired with JS snippet. onChange Date Callback for ZebraForm"
 	},
 	"Debug PrintR": {
-		"prefix": "nwk-printr-debug",
+		"prefix": "nwk-debug-printr",
 		"body": [
 			"echo '<pre>';"
 			"print_r(${1:\\$result});"
 			"echo '</pre>';"
 			"die;"
 		],
-		"description": "PrintR debug for WSDL Call"
+		"description": "PrintR debug variable"
 	},
 	"Debug a variable": {
 		"prefix": "nwk-debug",
