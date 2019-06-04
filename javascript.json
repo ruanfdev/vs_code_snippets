@@ -249,7 +249,7 @@
 		"prefix": "nwk-noty-error",
 		"body": [
 			"var noty = [];",
-			"noty['message'] = '<?php echo \\$translation->getValue('${1:translation}');?>';",
+			"noty['message'] = ${1|data.ErrorValue === '' ? data.ErrorType : data.ErrorValue,'<?php echo $translation->getValue('translation');?>'|};",
 			"noty['position'] = 'top';",
 			"noty['type'] = 'E';",
 			"noty['modal'] = true;",
@@ -311,13 +311,13 @@
 	"ZebraForm Date Callback": {
 		"prefix": "nwk-date-onchange",
 		"body": [
-			"var callback = function() {"
-			"\tvar datepicker = $('#${2:fieldID}').data('Zebra_DatePicker');"
-			"\tdatepicker.update({"
-			"\t\t${1|onSelect,onClear|}: function() {"
-			"\t\t\tonChangeFunction();"
-			"\t\t}"
-			"\t});"
+			"var callback = function() {",
+			"\tvar datepicker = $('#${2:fieldID}').data('Zebra_DatePicker');",
+			"\tdatepicker.update({",
+			"\t\t${1|onSelect,onClear|}: function() {",
+			"\t\t\tonChangeFunction();",
+			"\t\t}",
+			"\t});",
 			"}"
 		],
 		"description": "Paired with PHP snippet. onChange Date Callback for ZebraForm"
