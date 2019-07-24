@@ -322,4 +322,11 @@
 		],
 		"description": "Paired with PHP snippet. onChange Date Callback for ZebraForm"
 	},
+	"Preset Console Log": {
+		"prefix": "nwk-console-log",
+		"body": [
+			"console.log('${1:identifier in console}',${2:data});"
+		],
+		"description": "Preset Console Log with identifier"
+	},
 }
