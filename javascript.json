@@ -190,7 +190,7 @@
 			"}).done(function(data) {",
 			"\tif (data._S != 'J') {",
 			"\t\tvar noty = [];",
-			"\t\tnoty['message'] = '<?php echo \\$translation->getValue('translation');?>';",
+			"\t\tnoty['message'] = data.ErrorValue === '' ? data.ErrorType : data.ErrorValue;",
 			"\t\tnoty['position'] = 'top';",
 			"\t\tnoty['type'] = 'E';",
 			"\t\tnoty['modal'] = true;",
