@@ -1,17 +1,4 @@
 {
-	// Place your snippets for javascript here. Each snippet is defined under a snippet name and has a prefix, body and 
-	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
-	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
-	// same ids are connected.
-	// Example:
-	// "Print to console": {
-	// 	"prefix": "nwk-log",
-	// 	"body": [
-	// 		"console.log('$1');",
-	// 		"$2"
-	// 	],
-	// 	"description": "Log output to console"
-	// }
 	"Document ready": {
 		"prefix": "nwk-doc-ready",
 		"body": [
@@ -99,7 +86,7 @@
 			"\t\t\t}",
 			"\t\t});",
 			"\t}",
-			"}",
+			"}"
 		],
 		"description": "Calback for ZebraForm dependency"
 	},
@@ -113,7 +100,7 @@
 			"\t\t\\$('#$control_name').prop('disabled', true);",
 			"\t\tform.submit();",
 			"\t}",
-			"}",
+			"}"
 		],
 		"description": "Submit function"
 	},
@@ -122,7 +109,7 @@
 		"body": [
 			"\\$('#$id').show();",
 			"\\$('#$id').prop('src', '$url');",
-			"\\$('#$id').css({'height': window.innerHeight - $height});",
+			"\\$('#$id').css({'height': window.innerHeight - $height});"
 		],
 		"description": "Show and populate datagrid in iframe"
 	},
@@ -241,7 +228,7 @@
 			"noty['type'] = 'S';",
 			"noty['modal'] = true;",
 			"noty['timeout'] = 1500;",
-			"show_noty(noty);",
+			"show_noty(noty);"
 		],
 		"description": "Show Success Noty"
 	},
@@ -254,7 +241,7 @@
 			"noty['type'] = 'E';",
 			"noty['modal'] = true;",
 			"noty['timeout'] = false;",
-			"show_noty(noty);",
+			"show_noty(noty);"
 		],
 		"description": "Show Error Noty"
 	},
@@ -266,7 +253,7 @@
 			"noty['type'] = 'V';",
 			"noty['modal'] = true;",
 			"noty['timeout'] = false;",
-			"show_noty(noty);",
+			"show_noty(noty);"
 		],
 		"description": "Show Verwerking Noty"
 	},
@@ -293,7 +280,7 @@
 			"\t\t\\$.noty.closeAll();",
 			"\t}",
 			"}",
-			"show_noty(noty);",
+			"show_noty(noty);"
 		],
 		"description": "Show Confirm Noty"
 	},
@@ -328,5 +315,5 @@
 			"console.log('${1:identifier}',${2:data});"
 		],
 		"description": "Preset Console Log with identifier"
-	},
+	}
 }
