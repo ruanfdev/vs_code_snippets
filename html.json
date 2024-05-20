@@ -1,6 +1,6 @@
 {
 		"Radio buttons": {
-			"prefix": "nwk-radio",
+			"prefix": "rf-radio",
 			"body": [
 				"<div class=\"cell\"><?php echo \\$$control_name?></div>",
 		  "<div class=\"cell\"><?php echo \\$label_$control_name?></div>"
@@ -8,7 +8,7 @@
 			"description": "Create html for radio buttons"
 		},
 		"Local loading spinner": {
-			"prefix": "nwk-loading-local",
+			"prefix": "rf-loader",
 			"body": [
 				"<div class=\"col-sm-$sm col-md-$md col-lg-$lg $loading_class\">",
 				"\t<div align=\"center\">",
@@ -19,21 +19,21 @@
 			"description": "A local loading spinner"
 		},
 		"Checkbox": {
-			"prefix": "nwk-checkbox",
+			"prefix": "rf-checkbox",
 			"body": [
 				"<div class=\"cell\"><?php echo ${1:control_name}_${2:value};?></div>"
 			],
 			"description": "Create html for checkbox"
 		},
 		"Datagrid iframe": {
-			"prefix": "nwk-datagrid-iframe",
+			"prefix": "rf-dg-iframe",
 			"body": [
 				"<iframe id=\"$id\" style=\"width: 100%; display: none\"></iframe>"
 			],
 			"description": "Create and hide datagrid in iframe"
 		},
 		"Datagrid": {
-			"prefix": "nwk-datagrid",
+			"prefix": "rf-dg",
 			"body": [
 				"<div class=\"container-fluid\">",
 				"\t<div class=\"row\">",
@@ -61,7 +61,7 @@
 			"description": "Create html for datagrid"
 		},
 	  "Template": {
-			"prefix": "nwk-template",
+			"prefix": "rf-template",
 			"body": [
 		  "<?php",
 				"require_once(\\$_SERVER['DOCUMENT_ROOT'] .'/nwk/Language/Language.class.php');",

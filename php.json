@@ -1,6 +1,6 @@
 {
 	"ZebraForm radio buttons": {
-		"prefix": "nwk-radio",
+		"prefix": "rf-zf-radio",
 		"body": [
 			"\\$form->add('label', '$label_name', '$control_name', \\$translation->getValue('$translation'));",
 			"\\$obj = \\$form->add('radios', '$control_name', $options);",
@@ -11,21 +11,21 @@
 		"description": "Create ZebraForm radio buttons"
 	},
 	"ZebraForm checkbox": {
-		"prefix": "nwk-checkbox",
+		"prefix": "rf-zf-checkbox",
 		"body": [
 			"\\$obj = \\$form->add('checkbox', '$control_name', '$value');"
 		],
 		"description": "Create ZebraForm checkbox control"
 	},
 	"ZebraForm checkbox2": {
-		"prefix": "nwk-checkbox2",
+		"prefix": "rf-zf-checkbox2",
 		"body": [
 			"\\$obj = \\$form->add('checkbox2', '${1:control_name}', '${2:value}', \\$translation->getValue('${3:translation}'));"
 		],
 		"description": "Create ZebraForm checkbox2 control"
 	},
 	"ZebraForm date": {
-		"prefix": "nwk-date",
+		"prefix": "rf-zf-date",
 		"body": [
 			"\\$form->add('label', '$label_name', '$control_name', \\$translation->getValue('$translation'));",
 			"\\$obj = \\$form->add('date', '$control_name', date('Ymd'));",
@@ -37,7 +37,7 @@
 		"description": "Create ZebraForm date control"
 	},
 	"ZebraForm text": {
-		"prefix": "nwk-text",
+		"prefix": "rf-zf-text",
 		"body": [
 			"\\$form->add('label', '$label_name', '$control_name', \\$translation->getValue('$translation'));",
 			"\\$obj = \\$form->add('text', '$control_name');",
@@ -48,7 +48,7 @@
 		"description": "Create ZebraForm text control"
 	},
 	"ZebraForm select": {
-	 	"prefix": "nwk-select",
+	 	"prefix": "rf-zf-select",
 	 	"body": [
 	 		"\\$form->add('label', '$label', '$control_name', \\$translation->getValue('$translation'));",
 			"\\$obj = \\$form->add('select', '$control_name');",
@@ -60,7 +60,7 @@
 	 	"description": "Create ZebraForm select control"
 	},
 	"ZebraForm button": {
-		"prefix": "nwk-button",
+		"prefix": "rf-zf-button",
 		"body": [
 			"\\$obj = \\$form->add('button', '${1:control_name}', '<span class=\"fa fa-${2:icon}\"></span> '.\\$translation->getValue('${3:translation}'));",
 			"\\$obj->set_attributes(array(",
@@ -71,21 +71,21 @@
 		"description": "Create ZebraForm button control"
 	},
 	"ZebraForm spam filter": {
-		"prefix": "nwk-spam-filter",
+		"prefix": "rf-zf-spam-filter",
 		"body": [
 			"\\$obj->disable_spam_filter();"
 		],
 		"description": "Disable ZebraForm's spam filter"
 	},
 	"ZebraForm case": {
-		"prefix": "nwk-case",
+		"prefix": "rf-zf-case",
 		"body": [
 			"\\$obj->change_case('upper');"
 		],
 		"description": "Change case of ZebraForm control"
 	},
 	"ZebraForm set attributes": {
-		"prefix": "nwk-attributes",
+		"prefix": "rf-zf-attributes",
 		"body": [
 			"\\$obj->set_attributes(array(",
 			"\t$0",
@@ -94,49 +94,49 @@
 		"description": "ZebraForm set attributes"
 	},
 	"ZebraForm autofocus attribute": {
-		"prefix": "nwk-autofocus",
+		"prefix": "rf-zf-autofocus",
 		"body": [
 			"'autofocus' => 'autofocus',"
 		],
 		"description": "ZebraForm autofocus attribute"
 	},
 	"ZebraForm reaonly attribute": {
-		"prefix": "nwk-readonly",
+		"prefix": "rf-zf-readonly",
 		"body": [
 			"'readonly' => 'readonly',"
 		],
 		"description": "ZebraForm readonly attribute"
 	},
 	"ZebraForm form control attribute": {
-		"prefix": "nwk-form-control",
+		"prefix": "rf-zf-form-control",
 		"body": [
 			"'class' => 'input-field control form-control',"
 		],
 		"description": "ZebraForm form control attribute"
 	},
 	"ZebraForm onChange attribute": {
-		"prefix": "nwk-onchange",
+		"prefix": "rf-zf-nchange",
 		"body": [
 			"'onchange' => '$function_name',"
 		],
 		"description": "ZebraFrom onChange attribute"
 	},
 	"ZebraForm onClick attribute": {
-		"prefix": "nwk-onclick",
+		"prefix": "rf-zf-onclick",
 		"body": [
 			"'onclick' => '$function_name',"
 		],
 		"description": "ZebraFrom onClick attribute"
 	},
 	"ZebraForm checked attribute": {
-		"prefix": "nwk-checked",
+		"prefix": "rf-zf-checked",
 		"body": [
 			"'checked' => '${1|true,false|}',"
 		],
 		"description": "ZebraFrom checked attribute"
 	},
 	"ZebraForm set rule": {
-		"prefix": "nwk-rule",
+		"prefix": "rf-zf-rule",
 		"body": [
 			"\\$obj->set_rule(array(",
 			"\t$0",
@@ -145,35 +145,35 @@
 		"description": "ZebraForm setRule attribute"
 	},
 	"ZebraForm number rule": {
-		"prefix": "nwk-number",
+		"prefix": "rf-zf-number",
 		"body": [
 			"'number' => array('', 'error', \\$translation->getValue('errNumeries')),"
 		],
 		"description": "ZebraForm number rule"
 	},
 	"ZebraForm required rule": {
-		"prefix": "nwk-required",
+		"prefix": "rf-zf-required",
 		"body": [
 			"'required' => array('error', \\$translation->getValue('errRequired')),"
 		],
 		"description": "ZebraForm required rule"
 	},
 	"ZebraForm length rule": {
-		"prefix": "nwk-length",
+		"prefix": "rf-zf-length",
 		"body": [
 			"'length' => array($start_length, $end_lenght, 'error', \\$translation->getValue('errLength')),"
 		],
 		"description": "ZebraFrom length rule"
 	},
 	"ZebraForm dependency rule": {
-		"prefix": "nwk-dependency",
+		"prefix": "rf-zf-dependency",
 		"body": [
 			"'dependencies' => array(array('$control_name' => $trigger_val), '$calback_name, $calback_param'),"
 		],
 		"description": "ZebraFrom dependency rule"
 	},
 	"Template": {
-		"prefix": "nwk-template",
+		"prefix": "rf-template",
 		"body": [
 			"require_once(\\$_SERVER['DOCUMENT_ROOT'] .'/nwk/Language/Language.class.php');",
 			"\\$translation = Language::start();",
@@ -208,7 +208,7 @@
 		"description": "Create template for ZebraForm"
 	},
 	"Class": {
-		"prefix": "nwk-class",
+		"prefix": "rf-create-class",
 		"body": [
 			"class $class_name {",
 			"\tprivate \\$fout, \\$data, \\$translation;",
@@ -283,14 +283,14 @@
 		"description": "Create class"
 	},
 	"ZebraForm attach tip": {
-		"prefix": "nwk-attach-tip",
+		"prefix": "rf-zf-attach-tip",
 		"body": [
 			"\\$form->fout('${1:field}', \\$translation->getValue('${2:translation}'), '${3:template}');"
 		],
 		"description": "ZebraForm attach tip on field"
 	},
 	"ZebraForm next page": {
-		"prefix": "nwk-next-page",
+		"prefix": "rf-zf-next-page",
 		"body": [
 			"\\$parms = array();",
 			"\\$form->next_page('${1:url_of_page}',\\$parms);"
@@ -298,7 +298,7 @@
 		"description": "ZebraForm redirect to new page with parameters passed with GET"
 	},
 	"Show Noty wrapper": {
-		"prefix": "nwk-noty-wrapper",
+		"prefix": "rf-noty-wrapper",
 		"body": [
 			"function $function_name(\\$$message, \\$$type, \\$$timeout, \\$$exit = false) {",
 			"\tglobal \\$form;",
@@ -319,7 +319,7 @@
 		"description": "A wrapper for the show_noty-function"
 	},
 	"Natural call": {
-		"prefix": "nwk-natural-call",
+		"prefix": "rf-natural-call",
 		"body": [
 			"try {",
 			"\t\\$wsdl = \"WSDL\";",
@@ -357,7 +357,7 @@
 		"description": "Natural call with error handling"
 	},
 	"ZebraForm Date Callback": {
-		"prefix": "nwk-date-onchange",
+		"prefix": "rf-zf-date-onchange",
 		"body": [
 			"\\$form->clientside_validation(array(",
 			"\t'on_ready' => 'callback',",
@@ -366,7 +366,7 @@
 		"description": "Paired with JS snippet. onChange Date Callback for ZebraForm"
 	},
 	"Debug PrintR": {
-		"prefix": "nwk-debug-pr",
+		"prefix": "rf-debug",
 		"body": [
 			"echo '<pre>';",
 			"print_r(${1:\\$result});",
@@ -376,7 +376,7 @@
 		"description": "PrintR debug variable"
 	},
 	"Debug a variable": {
-		"prefix": "nwk-debug",
+		"prefix": "rf-debug-service",
 		"body": [
 		   "require_once(\\$_SERVER['DOCUMENT_ROOT'] .'/nwk/debug.php');",
 		   "\\$DEBUG->debug(\\$${1:var_to_debug}, ${2|true,false|});"

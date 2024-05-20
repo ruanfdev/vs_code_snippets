@@ -1,6 +1,6 @@
 {
 	"Document ready": {
-		"prefix": "nwk-doc-ready",
+		"prefix": "rf-doc-ready",
 		"body": [
 			"\\$(function() {",
 			"\t$0",
@@ -9,14 +9,14 @@
 		"description": "jQuery document.ready"
 	},
 	"Global loading spinner": {
-		"prefix": "nwk-loading-global",
+		"prefix": "rf-loader",
 		"body": [
 			"window.parent.parent.\\$('.loadingFrame').show();"
 		],
 		"description": "Shows the global loading spinner"
 	},
 	"Colorbox": {
-		"prefix": "nwk-colorbox",
+		"prefix": "rf-cbox",
 		"body": [
 			"\\$.colorbox({",
 			"\twidth: '98%',",
@@ -33,7 +33,7 @@
 		"description": "Create Colorbox"
 	},
 	"Show Noty wrapper": {
-		"prefix": "nwk-noty-wrapper",
+		"prefix": "rf-noty-func",
 		"body": [
 			"function $function_name($message, $type, $timeout) {",
 			"\tvar noty = [];",
@@ -48,7 +48,7 @@
 		"description": "A wrapper for the show_noty-function"
 	},
 	"Attach tip": {
-		"prefix": "nwk-tip",
+		"prefix": "rf-tip",
 		"body": [
 			"var form = \\$('#$form_name').data('Zebra_Form');",
 			"form.attach_tip($('#$field_name'), '<?php echo \\$translation->getValue('$translation');?>');"
@@ -56,14 +56,14 @@
 		"description": "Generate attach tip for control"
 	},
 	"Set Select2": {
-		"prefix": "nwk-select2",
+		"prefix": "rf-select2",
 		"body": [
 			"\\$('select').select2({theme: 'bootstrap'});"
 		],
 		"description": "Set all selects to select2"
 	},
 	"ZebraForm callback": {
-		"prefix": "nwk-callback",
+		"prefix": "rf-zf-callback",
 		"body": [
 			"function $callback_name($display_indicator, $control_name) {",
 			"\tif ($display_indicator) {",
@@ -88,10 +88,24 @@
 			"\t}",
 			"}"
 		],
-		"description": "Calback for ZebraForm dependency"
+		"description": "Callback for ZebraForm dependency"
+	},
+	"ZebraForm Date Callback": {
+		"prefix": "rf-zf-date-onchange",
+		"body": [
+			"var callback = function() {",
+			"\tvar datepicker = $('#${2:fieldID}').data('Zebra_DatePicker');",
+			"\tdatepicker.update({",
+			"\t\t${1|onSelect,onClear|}: function() {",
+			"\t\t\tonChangeFunction();",
+			"\t\t}",
+			"\t});",
+			"}"
+		],
+		"description": "Paired with PHP snippet. onChange Date Callback for ZebraForm"
 	},
 	"Submit function": {
-		"prefix": "nwk-submit",
+		"prefix": "rf-submit",
 		"body": [
 			"function $function_name() {",
 			"\tvar form = \\$('#$form_name').data('Zebra_Form');",
@@ -105,7 +119,7 @@
 		"description": "Submit function"
 	},
 	"Datagrid iframe": {
-		"prefix": "nwk-datagrid-iframe",
+		"prefix": "rf-dg-iframe",
 		"body": [
 			"\\$('#$id').show();",
 			"\\$('#$id').prop('src', '$url');",
@@ -114,7 +128,7 @@
 		"description": "Show and populate datagrid in iframe"
 	},
 	"Datagrid": {
-		"prefix": "nwk-datagrid",
+		"prefix": "rf-dg",
 		"body": [
 			"\\$('#$datagrid_id').datagrid({",
 			"\ttitle: '<?php echo \\$translation->getValue('$title_translation');?>',",
@@ -165,7 +179,7 @@
 		"description": "Create Datagrid"
 	},
 	"AJAX call - R": {
-		"prefix": "nwk-ajax-r",
+		"prefix": "rf-ajax",
 		"body": [
 			"\\$.ajax({",
 			"\turl: '$url',",
@@ -190,37 +204,8 @@
 		],
 		"description": "AJAX call"
 	},
-	"AJAX call - Q": {
-		"prefix": "nwk-ajax-q",
-		"body": [
-			"\\$.ajax({",
-			"\turl: '$url',",
-			"\tdataType: 'json',",
-			"\tdata: {",
-			"\t\t$var_naam: $var_value,",
-			"\t}",
-			"}).done(function(data) {",
-			"\tvar noty = [];",
-			"\tnoty['modal'] = true;",
-			"\tnoty['layout'] = 'top';",
-			"",
-			"\tif (data.ERROR == '') {",
-			"\t\tnoty['type'] = 'success';",
-			"\t\tnoty['timeout'] = 1500;",
-			"\t\tnoty['message'] = '<?php echo \\$translation->getValue('$translation');?>';",
-			"\t} else {",
-			"\t\tnoty['type'] = 'error';",
-			"\t\tnoty['timeout'] = false;",
-			"\t\tnoty['message'] = data.ERROR;",
-			"\t}",
-			"",
-			"\tshow_noty(noty);",
-			"});"
-		],
-		"description": "AJAX call"
-	},
 	"Noty Success": {
-		"prefix": "nwk-noty-success",
+		"prefix": "rf-noty-success",
 		"body": [
 			"var noty = [];",
 			"noty['message'] = '<?php echo \\$translation->getValue('${1:translation}');?>';",
@@ -233,7 +218,7 @@
 		"description": "Show Success Noty"
 	},
 	"Noty Error": {
-		"prefix": "nwk-noty-error",
+		"prefix": "rf-noty-error",
 		"body": [
 			"var noty = [];",
 			"noty['message'] = ${1|data.ErrorValue === '' ? data.ErrorType : data.ErrorValue,'<?php echo $translation->getValue('translation');?>'|};",
@@ -246,7 +231,7 @@
 		"description": "Show Error Noty"
 	},
 	"Noty Verwerk": {
-		"prefix": "nwk-noty-verwerk",
+		"prefix": "rf-noty-verwerk",
 		"body": [
 			"var noty = [];",
 			"noty['message'] = '<?php echo \\$translation->getValue('msgVerwerkingWA');?>';",
@@ -255,10 +240,10 @@
 			"noty['timeout'] = false;",
 			"show_noty(noty);"
 		],
-		"description": "Show Verwerking Noty"
+		"description": "Show Processing Noty"
 	},
 	"Noty Confirm": {
-		"prefix": "nwk-noty-confirm",
+		"prefix": "rf-noty-confirm",
 		"body": [
 			"var noty = [];",
 			"noty['message'] = '<?php echo \\$translation->getValue('$translation');?>';",
@@ -285,7 +270,7 @@
 		"description": "Show Confirm Noty"
 	},
 	"Noty Event": {
-		"prefix": "nwk-noty-event",
+		"prefix": "rf-noty-event",
 		"body": [
 			"noty['event'] = {",
 			"\t${1|onShow,afterShow,onClose,afterClose,onCloseClick|}: function() {",
@@ -295,22 +280,8 @@
 		],
 		"description": "Events for Noty"
 	},
-	"ZebraForm Date Callback": {
-		"prefix": "nwk-date-onchange",
-		"body": [
-			"var callback = function() {",
-			"\tvar datepicker = $('#${2:fieldID}').data('Zebra_DatePicker');",
-			"\tdatepicker.update({",
-			"\t\t${1|onSelect,onClear|}: function() {",
-			"\t\t\tonChangeFunction();",
-			"\t\t}",
-			"\t});",
-			"}"
-		],
-		"description": "Paired with PHP snippet. onChange Date Callback for ZebraForm"
-	},
 	"Preset Console Log": {
-		"prefix": "nwk-console-log",
+		"prefix": "rf-clog",
 		"body": [
 			"console.log('${1:identifier}',${2:data});"
 		],
