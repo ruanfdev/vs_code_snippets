@@ -365,7 +365,7 @@
 		],
 		"description": "Paired with JS snippet. onChange Date Callback for ZebraForm"
 	},
-	"Debug PrintR": {
+	"Debug with Print-R": {
 		"prefix": "rf-debug",
 		"body": [
 			"echo '<pre>';",
@@ -373,9 +373,9 @@
 			"echo '</pre>';",
 			"die;"
 		],
-		"description": "PrintR debug variable"
+		"description": "Debugs a variable with Print-R"
 	},
-	"Debug a variable": {
+	"Debug with Service": {
 		"prefix": "rf-debug-service",
 		"body": [
 		   "require_once(\\$_SERVER['DOCUMENT_ROOT'] .'/nwk/debug.php');",
