@@ -48,24 +48,24 @@
 		"description": "Create ZebraForm text control"
 	},
 	"ZebraForm select": {
-	 	"prefix": "rf-zf-select",
-	 	"body": [
-	 		"\\$form->add('label', '$label', '$control_name', \\$translation->getValue('$translation'));",
+		"prefix": "rf-zf-select",
+		"body": [
+			"\\$form->add('label', '$label', '$control_name', \\$translation->getValue('$translation'));",
 			"\\$obj = \\$form->add('select', '$control_name');",
 			"\\$obj->add_options($options);",
 			"\\$obj->set_attributes(array(",
 			"\t'class' => 'input-field control form-control',",
 			"));"
-	 	],
-	 	"description": "Create ZebraForm select control"
+		],
+		"description": "Create ZebraForm select control"
 	},
 	"ZebraForm button": {
 		"prefix": "rf-zf-button",
 		"body": [
 			"\\$obj = \\$form->add('button', '${1:control_name}', '<span class=\"fa fa-${2:icon}\"></span> '.\\$translation->getValue('${3:translation}'));",
 			"\\$obj->set_attributes(array(",
-				"\t'class' => 'btn btn-${4|success,warning,info,danger|}',",
-				"\t'onclick' => '$function_name',",
+			"\t'class' => 'btn btn-${4|success,warning,info,danger|}',",
+			"\t'onclick' => '$function_name',",
 			"));"
 		],
 		"description": "Create ZebraForm button control"
@@ -369,7 +369,7 @@
 		"prefix": "rf-debug",
 		"body": [
 			"echo '<pre>';",
-			"print_r(${1:\\$result});",
+			"print_r($${1:\\result});",
 			"echo '</pre>';",
 			"die;"
 		],
@@ -378,8 +378,8 @@
 	"Debug with Service": {
 		"prefix": "rf-debug-service",
 		"body": [
-		   "require_once(\\$_SERVER['DOCUMENT_ROOT'] .'/nwk/debug.php');",
-		   "\\$DEBUG->debug(\\$${1:var_to_debug}, ${2|true,false|});"
+			"require_once(\\$_SERVER['DOCUMENT_ROOT'] .'/nwk/debug.php');",
+			"\\$DEBUG->debug(\\$${1:var_to_debug}, ${2|true,false|});"
 		],
 		"description": "Debugs a variable and optionally exits the script"
 	}
