@@ -369,7 +369,7 @@
 		"prefix": "rf-debug",
 		"body": [
 			"echo '<pre>';",
-			"print_r($${1:\\result});",
+			"print_r($${1:result});",
 			"echo '</pre>';",
 			"die;"
 		],
