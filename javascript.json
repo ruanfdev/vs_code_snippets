@@ -1,22 +1,22 @@
 {
 	"Document ready": {
-		"prefix": "rf-doc-ready",
+		"prefix": "s-doc-ready",
 		"body": [
 			"\\$(function() {",
 			"\t$0",
 			"});"
-		], 
+		],
 		"description": "jQuery document.ready"
 	},
 	"Global loading spinner": {
-		"prefix": "rf-loader",
+		"prefix": "s-loader",
 		"body": [
 			"window.parent.parent.\\$('.loadingFrame').show();"
 		],
 		"description": "Shows the global loading spinner"
 	},
 	"Colorbox": {
-		"prefix": "rf-cbox",
+		"prefix": "s-cbox",
 		"body": [
 			"\\$.colorbox({",
 			"\twidth: '98%',",
@@ -33,7 +33,7 @@
 		"description": "Create Colorbox"
 	},
 	"Show Noty wrapper": {
-		"prefix": "rf-noty-func",
+		"prefix": "s-noty-func",
 		"body": [
 			"function $function_name($message, $type, $timeout) {",
 			"\tvar noty = [];",
@@ -48,7 +48,7 @@
 		"description": "A wrapper for the show_noty-function"
 	},
 	"Attach tip": {
-		"prefix": "rf-tip",
+		"prefix": "s-tip",
 		"body": [
 			"var form = \\$('#$form_name').data('Zebra_Form');",
 			"form.attach_tip($('#$field_name'), '<?php echo \\$translation->getValue('$translation');?>');"
@@ -56,14 +56,14 @@
 		"description": "Generate attach tip for control"
 	},
 	"Set Select2": {
-		"prefix": "rf-select2",
+		"prefix": "s-select2",
 		"body": [
 			"\\$('select').select2({theme: 'bootstrap'});"
 		],
 		"description": "Set all selects to select2"
 	},
 	"ZebraForm callback": {
-		"prefix": "rf-zf-callback",
+		"prefix": "s-zf-callback",
 		"body": [
 			"function $callback_name($display_indicator, $control_name) {",
 			"\tif ($display_indicator) {",
@@ -91,7 +91,7 @@
 		"description": "Callback for ZebraForm dependency"
 	},
 	"ZebraForm Date Callback": {
-		"prefix": "rf-zf-date-onchange",
+		"prefix": "s-zf-date-onchange",
 		"body": [
 			"var callback = function() {",
 			"\tvar datepicker = $('#${2:fieldID}').data('Zebra_DatePicker');",
@@ -105,7 +105,7 @@
 		"description": "Paired with PHP snippet. onChange Date Callback for ZebraForm"
 	},
 	"Submit function": {
-		"prefix": "rf-submit",
+		"prefix": "s-submit",
 		"body": [
 			"function $function_name() {",
 			"\tvar form = \\$('#$form_name').data('Zebra_Form');",
@@ -119,7 +119,7 @@
 		"description": "Submit function"
 	},
 	"Datagrid iframe": {
-		"prefix": "rf-dg-iframe",
+		"prefix": "s-dg-iframe",
 		"body": [
 			"\\$('#$id').show();",
 			"\\$('#$id').prop('src', '$url');",
@@ -128,7 +128,7 @@
 		"description": "Show and populate datagrid in iframe"
 	},
 	"Datagrid": {
-		"prefix": "rf-dg",
+		"prefix": "s-dg",
 		"body": [
 			"\\$('#$datagrid_id').datagrid({",
 			"\ttitle: '<?php echo \\$translation->getValue('$title_translation');?>',",
@@ -178,8 +178,15 @@
 		],
 		"description": "Create Datagrid"
 	},
-	"AJAX call - R": {
-		"prefix": "rf-ajax",
+	"DatagridLyn": {
+		"prefix": "s-dg-addline",
+		"body": [
+			"{field: '$field_id', halign: 'left', align: 'left', title: '<?php echo \\$translation->getValue('$field_translation');?>', width: 100, sortable: true},"
+		],
+		"description": "Create Datagrid Line"
+	},
+	"AJAX call": {
+		"prefix": "s-ajax",
 		"body": [
 			"\\$.ajax({",
 			"\turl: '$url',",
@@ -205,7 +212,7 @@
 		"description": "AJAX call"
 	},
 	"Noty Success": {
-		"prefix": "rf-noty-success",
+		"prefix": "s-noty-success",
 		"body": [
 			"var noty = [];",
 			"noty['message'] = '<?php echo \\$translation->getValue('${1:translation}');?>';",
@@ -218,7 +225,7 @@
 		"description": "Show Success Noty"
 	},
 	"Noty Error": {
-		"prefix": "rf-noty-error",
+		"prefix": "s-noty-error",
 		"body": [
 			"var noty = [];",
 			"noty['message'] = ${1|data.ErrorValue === '' ? data.ErrorType : data.ErrorValue,'<?php echo $translation->getValue('translation');?>'|};",
@@ -231,7 +238,7 @@
 		"description": "Show Error Noty"
 	},
 	"Noty Verwerk": {
-		"prefix": "rf-noty-verwerk",
+		"prefix": "s-noty-verwerk",
 		"body": [
 			"var noty = [];",
 			"noty['message'] = '<?php echo \\$translation->getValue('msgVerwerkingWA');?>';",
@@ -243,7 +250,7 @@
 		"description": "Show Processing Noty"
 	},
 	"Noty Confirm": {
-		"prefix": "rf-noty-confirm",
+		"prefix": "s-noty-confirm",
 		"body": [
 			"var noty = [];",
 			"noty['message'] = '<?php echo \\$translation->getValue('$translation');?>';",
@@ -270,7 +277,7 @@
 		"description": "Show Confirm Noty"
 	},
 	"Noty Event": {
-		"prefix": "rf-noty-event",
+		"prefix": "s-noty-event",
 		"body": [
 			"noty['event'] = {",
 			"\t${1|onShow,afterShow,onClose,afterClose,onCloseClick|}: function() {",
@@ -281,7 +288,7 @@
 		"description": "Events for Noty"
 	},
 	"Preset Console Log": {
-		"prefix": "rf-clog",
+		"prefix": "s-clog",
 		"body": [
 			"console.log('${1:identifier}',${2:data});"
 		],
